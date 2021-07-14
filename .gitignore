@@ -1,1 +1,4 @@
 RAW_Data/
+Secrets.py
+__pycache__/
+.vs/
