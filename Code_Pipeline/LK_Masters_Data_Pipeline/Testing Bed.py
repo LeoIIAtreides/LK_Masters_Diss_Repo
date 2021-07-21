@@ -32,20 +32,99 @@
 #slice = slice(7,-4)
 #print(website[slice])
 
+#           Logical Operators
+
 #age = int(input("How old are you?"))
 
 #if age >= 18:
-    #print("you are an adult.")
+#    print("you are an adult.")
 #elif age < 0:
-    print("you aren't alive, buddy")
+#    print("you aren't alive, buddy")
 #else:
-    #print("you are under-age")
+#    print("you are under-age")
 
 
-temp=int(input("what is the temp outside?: "))
-if temp >= 0 and temp <= 30:
-    print("pretty nice")
-elif temp > 30 or temp <0:
-    print("not so good")
+#temp = int(input("what is the temp outside?: "))
 
-#issues with intend??
+#if temp >= 0 and temp <= 30:
+#    print("pretty nice")
+#elif temp > 30 or temp < 0:
+#    print("not so good")
+#    print("stay inside")
+
+#           While Loop
+
+#name = ""
+
+#while len(name) == 0:
+#    name = input("Enter your name:")
+#print ("Hello "+name)
+
+#           For Loops
+#for index in range(10):
+#    print(index)
+
+#for index in range(50,100+1,2):
+#    print(index)
+#above ioterates through each number from 50-100, counteing every second num
+
+#for index in "Leo Knowles":
+#    print(index)
+
+#the -1 below reverses the order, making this a countdown
+#import time
+#for seconds in range(10,0,-1):
+#    print(seconds)
+#    time.sleep(1)
+#print("yay")
+
+#           Nested Loop
+
+#rows = int(input("how many rows?"))
+#columns = int(input("how many columns?"))
+#symbol = int(input("enter a symbol?"))
+ 
+#for i in range(rows):
+#    for j in range(columns):
+#        print(symbol, end="")
+#    print()
+
+#           Loop Control
+#Break: is used to termiate a loop when it's encountered
+while True:
+    name = input("Enter your name: ")
+    if name != "":
+        break
+print ("Hello "+name)
+
+#Continue: skips to next iteration of loop
+phone_num = "123-456-789"
+
+for i in phone_num:
+    if i == "-":
+        continue
+    print(i, end="")
+
+#Pass: does nothing, acts as a placeholder
+
+for i in range(1,21):
+    if i == 13:
+        pass
+    else:
+        print(i)
+
+#           Lists - a variable that contains multiple values
+
+food = ["pizza","chips","carrot","fish"]
+
+#print(food[0:2])
+
+food.append("sushi")
+food.remove("pizza")
+#food.pop()
+#above removes last element
+food.sort()
+
+for x in food:
+    print(x)
+
