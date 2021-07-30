@@ -3,28 +3,29 @@ from twarc import Twarc2, expansions
 import datetime
 import json
 
+# Replace your bearer token below
 client = Twarc2(bearer_token=TOKEN)
 
 
-def main(query:str):
-    # Specify the start time in UTC for the time period you want Tweets from
+def main():
+    # Specify the start time in UTC for the time period you want replies from
     start_time = datetime.datetime(2021, 1, 1, 0, 0, 0, 0, datetime.timezone.utc)
 
     # Specify the end time in UTC for the time period you want Tweets from
     end_time = datetime.datetime(2021, 5, 30, 0, 0, 0, 0, datetime.timezone.utc)
 
     # This is where we specify our query as discussed in module 5
-    #query = "asimov -is:retweet"
+    query = "from:twitterdev"
 
-    # File to write tweets to
-    file_name = 'Twarc_Test_Bed_Data.json'
+    # Name and path of the file where you want the Tweets written to
+    file_name = 'tweets.txt'
 
-    # the following calls the full archive search endpoint and defines the max result (current 10 for testing)
+    # The search_all method call the full-archive search endpoint to get Tweets based on the query, start and end times
     search_results = client.search_all(query=query, start_time=start_time, end_time=end_time, max_results=100)
 
     # Twarc returns all Tweets for the criteria set above, so we page through the results
     for page in search_results:
-        # The API returns the Tweet info, user, media, etc. separately
+        # The Twitter API v2 returns the Tweet information and the user, media etc.  separately
         # so we use expansions.flatten to get all the information in a single JSON
         result = expansions.flatten(page)
         # We will open the file and append one JSON object per new line
@@ -32,6 +33,6 @@ def main(query:str):
             for tweet in result:
                 filehandle.write('%s\n' % json.dumps(tweet))
 
+
 if __name__ == "__main__":
-#    main(query = "asimov -is:retweet")
-    main(query = "vaccine -is:nullcast -is:retweet lang:en place_country:gb")
+    main()
