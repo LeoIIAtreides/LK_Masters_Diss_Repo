@@ -1,10 +1,7 @@
 import requests
 import os
 import json
-
-# Bearer Token has been saved as environment variable as 'BEARER_TOKEN'
-
-bearer_token = os.environ.get("BEARER_TOKEN")
+from Secrets import TOKEN
 
 search_url = "https://api.twitter.com/2/tweets/search/all"
 
@@ -15,7 +12,7 @@ def bearer_oauth(r):
     Method required by bearer token authentication.
     """
 
-    r.headers["Authorization"] = f"Bearer {bearer_token}"
+    r.headers["Authorization"] = f"Bearer {TOKEN}"
     r.headers["User-Agent"] = "v2FullArchiveSearchPython"
     return r
 
