@@ -8,10 +8,10 @@ client = Twarc2(bearer_token=TOKEN)
 
 def main(query:str):
     # Specify the start time in UTC for the time period you want Tweets from
-    start_time = datetime.datetime(2021, 1, 1, 0, 0, 0, 0, datetime.timezone.utc)
+    start_time = datetime.datetime(2020, 12, 3, 0, 0, 0, 0, datetime.timezone.utc)
 
     # Specify the end time in UTC for the time period you want Tweets from
-    end_time = datetime.datetime(2021, 5, 30, 0, 0, 0, 0, datetime.timezone.utc)
+    end_time = datetime.datetime(2020, 12, 30, 0, 0, 0, 0, datetime.timezone.utc)
 
     # This is where we specify our query as discussed in module 5
     #query = "asimov -is:retweet"
