@@ -13,14 +13,11 @@ def main(query:str):
     # Specify the end time in UTC for the time period you want Tweets from
     end_time = datetime.datetime(2020, 12, 30, 0, 0, 0, 0, datetime.timezone.utc)
 
-    # This is where we specify our query as discussed in module 5
-    #query = "asimov -is:retweet"
-
     # File to write tweets to
-    file_name = 'Twarc_Test_Bed_Data.json'
+    file_name = 'Twarc_Test_Bed_Data_2.json'
 
-    # the following calls the full archive search endpoint and defines the max result (current 10 for testing)
-    search_results = client.search_all(query=query, start_time=start_time, end_time=end_time, max_results=100)
+    # the following calls the full archive search endpoint
+    search_results = client.search_all(query=query, start_time=start_time, end_time=end_time)
 
     # Twarc returns all Tweets for the criteria set above, so we page through the results
     for page in search_results:
@@ -33,4 +30,4 @@ def main(query:str):
                 filehandle.write('%s\n' % json.dumps(tweet))
 
 if __name__ == "__main__":
-    main(query = "(vaccine OR vaccinate OR vaccinated OR vaccination OR vaccinations OR immunisation OR immunization OR immunize OR immunise OR vax OR vaxd OR covax OR covidvaccine) -is:nullcast -is:retweet lang:en place_country:gb")
+    main(query = "(vaccine OR vaccinate OR vaccinated OR vaccination OR vaccinations OR immunisation OR immunization OR immunize OR immunise OR vax OR vaxd OR covax OR covidvaccine) -is:nullcast -is:retweet -is:reply -is:quote lang:en place_country:gb")
