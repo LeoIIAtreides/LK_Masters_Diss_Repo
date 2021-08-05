@@ -33,5 +33,4 @@ def main(query:str):
                 filehandle.write('%s\n' % json.dumps(tweet))
 
 if __name__ == "__main__":
-#    main(query = "asimov -is:retweet")
-    main(query = "vaccine -is:nullcast -is:retweet lang:en place_country:gb")
+    main(query = "(vaccine OR vaccinate OR vaccinated OR vaccination OR vaccinations OR immunisation OR immunization OR immunize OR immunise OR vax OR vaxd OR covax OR covidvaccine) -is:nullcast -is:retweet lang:en place_country:gb")
