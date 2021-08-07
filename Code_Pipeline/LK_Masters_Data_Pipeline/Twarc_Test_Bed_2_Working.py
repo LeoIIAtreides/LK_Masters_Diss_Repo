@@ -11,7 +11,7 @@ def main(query:str):
     start_time = datetime.datetime(2020, 12, 3, 0, 0, 0, 0, datetime.timezone.utc)
 
     # Specify the end time in UTC for the time period you want Tweets from
-    end_time = datetime.datetime(2020, 12, 30, 0, 0, 0, 0, datetime.timezone.utc)
+    end_time = datetime.datetime(2021, 2, 3, 0, 0, 0, 0, datetime.timezone.utc)
 
     # File to write tweets to
     file_name = 'Twarc_Test_Bed_Data_2.json'
