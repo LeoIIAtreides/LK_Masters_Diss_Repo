@@ -8,7 +8,7 @@ client = Twarc2(bearer_token=TOKEN)
 
 def main():
     # List of user IDs to lookup, add the ones you would like to lookup
-    users = ['812922270']
+    users = ['ID HERE']
     # The user_lookup function gets the hydrated user information for specified users
     lookup = client.user_lookup(users=users)
     for page in lookup:

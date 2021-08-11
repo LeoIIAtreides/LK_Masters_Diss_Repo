@@ -2,10 +2,16 @@ from Secrets import TOKEN
 from twarc import Twarc2, expansions
 import datetime
 import json
+import tweeterid
 
 # Replace your bearer token below
 client = Twarc2(bearer_token=TOKEN)
 
+def Twitter_Handle():
+    T_Handel = (tweeterid.id_to_handle('754262124990431233'))
+    X_Handel = T_Handel.lstrip("@")
+    return (X_Handel)
+Twitter_Handle()
 
 def main():
     # Specify the start time in UTC for the time period you want Tweets from
@@ -18,7 +24,7 @@ def main():
     file_name = 'User_Lookup_Data.json'
 
     # This timeline functions gets the Tweet timeline for a specified user
-    user_timeline = client.timeline(user="Tony2Wilson", start_time=start_time, end_time=end_time)
+    user_timeline = client.timeline(user=Twitter_Handle(), start_time=start_time, end_time=end_time)
 
     # Twarc returns all Tweets for the criteria set above, so we page through the results
     for page in user_timeline:
