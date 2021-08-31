@@ -3,4 +3,8 @@ Secrets.py
 __pycache__/
 .vs/
 Testing_Beds/
+DataNotInUse/
+RAW_Data/
+PProcessed_Data/
+Final_Data/
 
